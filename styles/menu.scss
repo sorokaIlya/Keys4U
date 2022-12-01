@@ -12,38 +12,71 @@
         position: relative;
     }
 
-    .plus{
+    .plus {
         display: none;
     }
-    
+
     &__main {
         transition: all linear .35s;
 
-        >a::after {
-            transition: all linear .35s;
-            bottom: 0;
-            margin-top: 15px;
-            display: block;
-            height: 3px;
-            width: 0%;
-            content: "";
-            background-color: $yellow;
-        }
-
-        &:hover:not(.business):not(.active){
-            >a {
-                color: $yellow;
-            }
+        @media screen and(min-width:960px) {
 
             >a::after {
+                transition: all linear .35s;
+                bottom: 0;
+                margin-top: 15px;
+                display: block;
+                height: 3px;
+                width: 0%;
+                content: "";
+                background-color: $yellow;
+            }
+
+            &:hover:not(.business) {
+                >a {
+                    color: $yellow;
+                }
+
+                >a::after {
+                    opacity: 1;
+                    width: 100%;
+                }
+            }
+
+            &:hover .menu__second {
+                visibility: visible;
                 opacity: 1;
-                width: 100%;
             }
         }
 
-        &:hover .menu__second {
-            visibility: visible;
-            opacity: 1;
+        @media screen and(max-width:960px) {
+            &:not(.business) {
+                >a::after {
+                    transition: all linear .35s;
+                    border-style: solid;
+                    border-width: 0.25em 0.25em 0 0;
+                    content: '';
+                    display: inline-block;
+                    height: 1em;
+                    left: 0.15em;
+                    font-size: 12px;
+                    position: relative;
+                    top: 5px;
+                    font-weight: normal;
+                    transform: rotate(-45deg);
+                    width: 1em;
+                    content: "";
+                    margin-left: 15px;
+                    vertical-align: super;
+
+                }
+
+                &.active {
+                    >a::after {
+                        rotate: 180deg;
+                    }
+                }
+            }
         }
 
         &.business {
@@ -167,12 +200,15 @@
         position: absolute;
         translate: -100%;
         transition: translate ease-in-out 300ms;
+        padding-bottom: 20px;
 
         &.open {
             translate: 0;
             opacity: 1;
             visibility: visible;
-            .plus{
+            width: 90%;
+
+            .plus {
                 display: inline-block;
                 vertical-align: sub;
                 float: right;
@@ -183,7 +219,8 @@
         &__main {
             cursor: pointer;
             width: 100%;
-            >a{
+
+            >a {
                 text-transform: uppercase;
                 font-weight: 600;
                 font-size: 16px;
@@ -195,6 +232,7 @@
             padding: 20px;
             transform: rotateX(0deg);
             opacity: 1;
+            margin-top: 20px;
 
             >li {
                 margin-bottom: 10px;
@@ -203,7 +241,8 @@
 
         &__second {
             background: #F5F5F5;
-            margin-top: 20px;
+            margin-top: 0px;
+
             .title {
                 width: 100%;
                 padding: 0;
@@ -211,10 +250,12 @@
                 display: block;
                 width: 100%;
                 padding: 0;
-                >a{
+
+                >a {
                     font-weight: 400;
                     text-transform: uppercase;
                 }
+
                 >i {
                     display: none;
                 }
@@ -222,11 +263,12 @@
             }
         }
 
-        &__second >.title.active &__third {
+        &__second>.title.active &__third {
             max-height: 100%;
             transform: rotateX(0deg);
             opacity: 1;
             padding-left: 20px;
+
             >li {
                 margin-bottom: 10px;
             }
@@ -235,7 +277,7 @@
         &__list {
             grid-template-columns: 1fr;
             flex-direction: column;
-            grid-row-gap: 20px;
+            grid-row-gap: 35px;
             place-items: baseline;
         }
 
@@ -253,7 +295,8 @@
             width: 100%;
             transform: rotateX(90deg);
         }
-        &__third{
+
+        &__third {
             border-left: 0;
             margin-top: 20px;
         }
