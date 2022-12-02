@@ -56,9 +56,13 @@ picture {
         line-height: 30px;
         color: #444444;
 
-        &:hover {
-            color: #1296CF;
-            cursor: text;
+        >a {
+            cursor: pointer !important;
+
+            &:hover {
+                color: #1296CF;
+                cursor: text;
+            }
         }
     }
 }
@@ -118,11 +122,13 @@ picture {
     margin: 0 auto;
     padding: 0 15px;
 }
-.title-nav{
+
+.title-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 section {
     margin-bottom: 70px;
 
@@ -147,6 +153,7 @@ section {
     src: url('./../fonts/FontBebasNeueBold.ttf') format('truetype');
     font-weight: bold;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
 @import './mixins.scss';
 @import './header.scss';
@@ -211,87 +218,5 @@ section {
             }
         }
 
-    }
-}
-
-.faq {
-    --padding-left: 85px;
-
-    .details-wrap {
-        margin-bottom: 120px;
-        padding-top: 10px;
-        @include detail-drop();
-
-        details {
-            summary {
-                display: flex;
-                grid-column-gap: 20px;
-                align-items: center;
-                padding-right: 40px;
-                padding-block: 10px;
-                padding-left: var(--padding-left);
-                width: 100%;
-                position: relative;
-                cursor: pointer;
-                font-weight: 400;
-                font-size: 24px;
-                line-height: 36px;
-                color: #292826;
-                list-style: none;
-            }
-
-            p {
-                margin: 20px 0;
-                padding-left: var(--padding-left);
-                line-height: 30px;
-                padding-right: 40px;
-
-                @media screen and(max-width:580px) {
-                    margin-top: 0;
-                    font-size: 16px;
-                }
-            }
-        }
-    }
-
-    .details__mark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: #FFFFFF;
-        box-shadow: 0px 4px 0px #F4F4F4, 0px 10px 24px rgba(209, 209, 209, 0.66);
-
-        span {
-            font-size: 34px;
-            line-height: 1.5;
-            vertical-align: text-top;
-            padding: 15px 15px;
-            color: #FEBD2C;
-        }
-    }
-
-    @media screen and(max-width:580px) {
-        --padding-left: 20px;
-
-        .details-wrap {
-            margin-inline: -20px;
-
-            details {
-                summary {
-                    font-weight: 600;
-                    font-size: 16px;
-                    line-height: 30px;
-                    padding-right: 30%;
-                }
-
-                p {
-                    padding-right: 30%;
-                }
-            }
-        }
-
-        .details__mark {
-            display: none;
-        }
     }
 }

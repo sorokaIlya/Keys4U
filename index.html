@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -427,7 +428,7 @@
                     </div>
                     <div class="reasons-section__blue">
                         <div class="reasons-section__title">
-                            <img src="images/emergency.png" alt="reason-emergency">
+                            <img src="images/emergency-full.png" alt="reason-emergency">
                             <h2>
                                 Get Fast Emergency
                             </h2>
@@ -453,22 +454,22 @@
             <div class="work-list">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide work-list__item">
-                        <img src="/images/work-1.png" alt="work-1">
+                        <img src="images/work-1.png" alt="work-1">
                     </div>
                     <div class="swiper-slide work-list__item">
-                        <img src="/images/work-2.png" alt="work-2">
+                        <img src="images/work-2.png" alt="work-2">
                     </div>
                     <div class="swiper-slide work-list__item">
-                        <img src="/images/work-3.png" alt="work-3">
+                        <img src="images/work-3.png" alt="work-3">
                     </div>
                     <div class="swiper-slide work-list__item">
-                        <img src="/images/work-4.png" alt="work-4">
+                        <img src="images/work-4.png" alt="work-4">
                     </div>
                     <div class="swiper-slide work-list__item">
-                        <img src="/images/work-5.png" alt="work-5">
+                        <img src="images/work-5.png" alt="work-5">
                     </div>
                     <div class="swiper-slide work-list__item">
-                        <img src="/images/work-6.png" alt="work-6">
+                        <img src="images/work-6.png" alt="work-6">
                     </div>
                 </div>
 
@@ -534,7 +535,7 @@
                 </div>
                 <div class="area__safe">
                     <div class="area__presentation">
-                        <img src="./images/area.png" alt="crime">
+                        <img src="images/area.png" alt="crime">
                         <div class="area__question">How safe is your area?</div>
                     </div>
                     <form action="" class="form-postcode">
@@ -554,25 +555,29 @@
                 </h3>
                 <div class="ul-list">
                     <ul class="section-list">
-                        <li>Locksmith West Hampstead, NW6</li>
-                        <li>Locksmith Mill Hill, NW7</li>
-                        <li>St John's Wood Locksmiths, NW8</li>
-                        <li>Colindale Locksmiths, NW9</li>
-                        <li>Locksmith Willesden, NW10</li>
+                        <li><a href="#"> West Hampstead, NW6</a></li>
+                        <li><a href="#"> Mill Hill, NW7</a></li>
+                        <li><a href="#">St John's Wood Locksmiths, NW8</a></li>
+                        <li><a href="#">Colindale Locksmiths, NW9</a></li>
+                        <li><a href="#"> Willesden, NW10</a></li>
                     </ul>
                     <ul class="section-list">
-                        <li>Locksmith Neasden, NW10 0UR</li>
-                        <li>Golders Green Locksmiths, NW11</li>
-                        <li>Camden Locksmiths, NW1</li>
-                        <li>Locksmith Kings Cross, NW1 7JY</li>
-                        <li>Locksmith Dollis Hill, NW10 2ET</li>
+                        <li><a href="#"> Neasden, NW10 0UR</a></li>
+                        <li><a href="#">Golders Green Locksmiths, NW11</a></li>
+                        <li><a href="#">Camden Locksmiths, NW1</a></li>
+                        <li><a href="#"> Kings Cross, NW1 7JY</a></li>
+                        <li><a href="#"> Dollis Hill, NW10 2ET</a></li>
 
                     </ul>
                     <ul class="section-list">
-                        <li> Hampstead Locksmiths, NW3</li>
-                        <li>Hendon Locksmiths, NW4 2JP</li>
-                        <li> Kentish Town Locksmiths, NW5 1AW</li>
-                        <li>Kilburn Locksmiths, NW6 7JR</li>
+                        <li>
+                            <a href="#">Hampstead Locksmiths, NW3</a>
+                        </li>
+                        <li><a href="#">Hendon Locksmiths, NW4 2JP</a></li>
+                        <li>
+                            <a href="#" a>Kentish Town Locksmiths, NW5 1AW</a>
+                        </li>
+                        <li><a href="#">Kilburn Locksmiths, NW6 7JR</a></li>
                     </ul>
                 </div>
             </div>
@@ -867,8 +872,7 @@
             </div>
             <div class="reasons-section__blue">
                 <div class="reasons-section__title">
-                    <img src="images/emergency.png" alt="reason-emergency">
-
+                    <img src="images/emergency-full.png" alt="reason-emergency">
                     <h2>
                         When you need it, get emergency help fast.
                     </h2>
@@ -1129,7 +1133,7 @@
         };
         worksMediaBreakpoint.addListener(observerSliderChecker);
         observerSliderChecker();
-
+        let a = 5;
         const burgerMenu = document.getElementById('burger-menu');
         const menuList = document.getElementById('main-menu');
         burgerMenu.addEventListener('click', () => {
@@ -1145,7 +1149,6 @@
                 .forEach(itemSecond => itemSecond.addEventListener('click', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    // itemSecond.classList.toggle('active');
                     if (!itemSecond.classList.contains('active')) {
                         itemSecond.querySelector('.plus').innerHTML = '<i class="ri-checkbox-indeterminate-line"></i>';
                         itemSecond.classList.add('active');

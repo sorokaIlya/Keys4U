@@ -22,6 +22,13 @@ $red: #FC2546;
 }
 
 .btn {
+    transition: background ease 200ms;
+
+    &:disabled {
+        color: #C2C2C2;
+        background: #E6E6E6;
+    }
+
     &-blue {
         text-align: center;
         padding: 15px 35px;
@@ -29,16 +36,58 @@ $red: #FC2546;
         font-weight: 500;
         color: #FFFFFF;
         background: $blue;
+
+        &:active {
+            background: #164594;
+        }
+
+        &:hover {
+            background: #3E7BE0;
+        }
+
+        &:focus,
+        &:focus-visible {
+            background: #3E7BE0;
+            outline: 4px solid rgba(23, 82, 181, 0.3);
+        }
     }
 
     &-red {
         @extend .btn-with-icon;
         background: $red;
+
+        &:active {
+            background: #CC213B;
+        }
+
+        &:hover {
+            background: #FB667D;
+        }
+
+        &:focus,
+        &:focus-visible {
+            background: #FB667D;
+            outline: 4px solid rgba(252, 37, 70, 0.3);
+        }
     }
 
     &-orange {
         @extend .btn-with-icon;
         background: $yellow;
+
+        &:active {
+            background: #FFA41D;
+        }
+
+        &:hover {
+            background: #FDD16F;
+        }
+
+        &:focus,
+        &:focus-visible {
+            outline: 4px solid rgba(254, 189, 44, 0.3);
+            background: #FDD16F;
+        }
     }
 
     &-more {
@@ -46,10 +95,32 @@ $red: #FC2546;
         font-size: 16px;
         line-height: 30px;
         color: #1296CF;
-        &:hover{
+
+        &:hover {
             text-decoration: underline;
         }
     }
+
+    &-gray {
+        @extend .btn-with-icon;
+        background: #E6E6E6;
+        color: #444444;
+
+        &:hover {
+            color: #1752B5;
+        }
+
+        &:focus,
+        &:focus-visible {
+            outline: 4px solid rgba(254, 189, 44, 0.3);
+            background: #FDD16F;
+        }
+
+        &:active {
+            background: #D5D5D5;
+        }
+    }
+
 }
 
 .two-column {
@@ -79,7 +150,7 @@ $red: #FC2546;
     }
 }
 
-@mixin locksmith-circle($color: #444444, $color-ellipse: #FEBD2C, $left:null, $right:null, $top:null, $bottom:null) {
+@mixin locksmith-circle($color: #444444, $color-ellipse: #FEBD2C, $left: null, $right: null, $top: null, $bottom: null) {
     position: absolute;
 
     @if $left !=null {
@@ -95,7 +166,7 @@ $red: #FC2546;
     }
 
     @if $bottom !=null {
-        top:auto !important;
+        top: auto !important;
         bottom: $bottom;
     }
 
@@ -117,7 +188,7 @@ $red: #FC2546;
         font-size: 27px;
         line-height: 27px;
         letter-spacing: 0.06em;
-        font-family:'Bebas Neue';
+        font-family: 'Bebas Neue';
         color: $color;
 
         &::after {
@@ -133,11 +204,13 @@ $red: #FC2546;
             clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 21% 77%, 32% 46%, 24% 13%);
         }
     }
+
     @media screen and(max-width:460px) {
         width: 70px;
         height: 20px;
         padding: 20px;
-        &__text{
+
+        &__text {
             line-height: 0.8;
         }
     }
@@ -178,10 +251,11 @@ $red: #FC2546;
         top: 30px;
         transform-origin: center;
         transition: 200ms linear;
+        transform: rotate(60deg);
     }
 
     details[open] summary:after {
-        transform: rotate(60deg);
+        transform: rotate(0deg);
     }
 
     details summary {

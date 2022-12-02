@@ -94,10 +94,7 @@
         }
 
         .login {
-            @extend .btn-with-icon;
             grid-area: login;
-            background: $grey;
-            color: #444444;
             justify-content: center;
             min-width: auto;
 
