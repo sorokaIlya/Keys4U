@@ -928,8 +928,10 @@
 
 .faq {
     --padding-left: 85px;
+    overflow-x: hidden;
 
     .details-wrap {
+
         margin-bottom: 120px;
         padding-top: 10px;
         @include detail-drop();

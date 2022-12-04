@@ -25,11 +25,10 @@
 
     <header class="header">
         <div class="container">
-            <div id="burger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button id="burger-menu" aria-controls="main-menu" aria-expanded="false">
+                <span class="seo-text">Menu</span>
+                <div class="hamburger" aria-hidden="true"></div>
+            </button>
             <div class="header__logo">
                 <img src="images/logo-black.png">
             </div>
@@ -164,7 +163,7 @@
 
                         <li class="title">
                             <i class="ri-arrow-right-circle-line"></i><a href="/london/south-london-locksmith">Door
-                                Services<a>
+                                Services</a>
                                     <span class="plus"><i class="ri-add-box-line"></i></span>
 
                                     <ul class="menu__third">
@@ -1133,10 +1132,15 @@
         };
         worksMediaBreakpoint.addListener(observerSliderChecker);
         observerSliderChecker();
-        let a = 5;
         const burgerMenu = document.getElementById('burger-menu');
         const menuList = document.getElementById('main-menu');
         burgerMenu.addEventListener('click', () => {
+            const isOpened = burgerMenu.getAttribute('aria-expanded') === 'true';
+            if(isOpened){
+                burgerMenu.setAttribute('aria-expanded', 'false');
+            } else{
+                burgerMenu.setAttribute('aria-expanded', 'true');
+            }
             burgerMenu.classList.toggle('open');
             menuList.classList.toggle('open');
         })
