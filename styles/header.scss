@@ -52,6 +52,9 @@
             font-size: 16px;
             line-height: 20px;
             color: #444444;
+            &:hover{
+                color:$yellow;
+            }
         }
     }
 
@@ -107,13 +110,14 @@
         }
 
         .basket {
+            cursor: pointer;
+            min-width: auto;
             grid-area: basket;
             font-weight: 400;
             font-size: 16px;
             line-height: 20px;
             text-align: center;
             color: #444444;
-            background: #1752B5;
             padding: 15px;
             color: #fff;
             display: grid;
